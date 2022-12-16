@@ -45,8 +45,7 @@ subprojects {
     }
 
     detekt {
-        config = files("$rootDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
-        baseline = file("$rootDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
+        config = files("$rootProject.projectDir/config/detekt.yml") // point to your custom config defining rules to run, overwriting default behavior
 
         reports {
             txt.enabled = true

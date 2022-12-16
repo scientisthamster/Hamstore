@@ -24,9 +24,11 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Greeting("Android")
                 }
+
             }
         }
     }
+    val t450 = 0
 }
 
 @Composable
@@ -42,6 +44,6 @@ fun DefaultPreview() {
     }
 }
 
-fun addEdas11f2312312() {
+fun adasghdashdhasddEdas11f2312312() {
 
 }
