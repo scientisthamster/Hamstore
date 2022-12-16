@@ -27,6 +27,7 @@ jobs:
   build:
     if: ${{ always() }}
     needs: setup-staff
+    runs-on: macos-latest
     steps:
       - name: Build with Gradle
         # Build project.
@@ -34,6 +35,7 @@ jobs:
   unit-tests:
     if: ${{ always() }}
     needs: setup-staff
+    runs-on: macos-latest
     steps:
       - name: Unit Tests
         # Run unit tests.
@@ -41,6 +43,7 @@ jobs:
   ui-tests:
     if: ${{ always() }}
     needs: setup-staff
+    runs-on: macos-latest
     steps:
       - name: Instrumented Tests
         # Run instrumented test(UI tests).
@@ -51,6 +54,7 @@ jobs:
   lint-check:
     if: ${{ always() }}
     needs: setup-staff
+    runs-on: macos-latest
     steps:
       - name: Ktlint check
         # Run ktlint check
