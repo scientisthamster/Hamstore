@@ -4,8 +4,6 @@ name: Pre Push Checks
 # Specifies the trigger for this workflow.
 on:
   push:
-    branches:
-      - '*'
   pull_request:
     branches:
       - develop
@@ -13,10 +11,7 @@ on:
 # Groups together all the jobs that run in the pre-push workflow.
 jobs:
   build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    runs-on: ${{matrix.os}}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         # This is an action that checks out your repository onto the runner,
