@@ -17,9 +17,6 @@ jobs:
         # This is an action that checks out your repository onto the runner,
         # allowing you to run scripts or other actions against your code (such as build and test tools).
         uses: actions/checkout@v3
-        with:
-          # This adds support for both `pull_request_target` and `push` events.
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Setup Java
         # Setup Java for our repository.
         uses: actions/setup-java@v3
