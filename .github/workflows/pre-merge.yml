@@ -28,22 +28,22 @@ jobs:
         # Run ktlint check
         if: failure()
         run: ./gradlew ktlintCheck
-    detekt-check:
-      runs-on: macos-latest
-      steps:
-        - name: Checkout Repository
-          # This is an action that checks out your repository onto the runner,
-          # allowing you to run scripts or other actions against your code (such as build and test tools).
-          uses: actions/checkout@v3
-        - name: Setup Java
-          # Setup Java for our repository.
-          uses: actions/setup-java@v3
-          with:
-            distribution: 'adopt'
-            java-version: '11'
-        - name: Detekt check
-          # Run detekt check
-          run: ./gradlew detekt
+  detekt-check:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+      - name: Detekt check
+        # Run detekt check
+        run: ./gradlew detekt
   unit-tests:
     runs-on: macos-latest
     steps:
