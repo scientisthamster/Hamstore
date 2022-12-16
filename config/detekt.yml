@@ -330,7 +330,7 @@ naming:
   FunctionNaming:
     active: true
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**']
-    functionPattern: '[a-z][a-zA-Z0-9]*'
+    functionPattern: '([A-Za-z][a-zA-Z0-9]*)|(`.*`)'
     excludeClassPattern: '$^'
     ignoreOverridden: true
   FunctionParameterNaming:
@@ -606,7 +606,7 @@ style:
   NestedClassesVisibility:
     active: true
   NewLineAtEndOfFile:
-    active: true
+    active: false
   NoTabs:
     active: false
   NullableBooleanCheck:
