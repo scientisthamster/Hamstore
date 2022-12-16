@@ -24,7 +24,6 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Greeting("Android")
                 }
-
             }
         }
     }
@@ -45,5 +44,4 @@ fun DefaultPreview() {
 }
 
 fun adasghdashdhasddEdas11f2312312() {
-
 }
