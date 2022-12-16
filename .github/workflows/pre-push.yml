@@ -11,7 +11,7 @@ on:
 # Groups together all the jobs that run in the pre-push workflow.
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout Repository
         # This is an action that checks out your repository onto the runner,
