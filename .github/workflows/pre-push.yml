@@ -24,13 +24,14 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
       - name: Build with Gradle
+        # Build project.
         run: ./gradlew build
-      - name: Build Project
-        # Build release apk file.
-        run: ./gradlew assemble
-      - name: Run unit test
+      - name: Unit Tests
         # Run unit tests.
         run: ./gradlew test
-      - name: Run Instrumented test
+      - name: Instrumented Tests
         # Run instrumented test(UI tests).
-        run: ./gradlew connectedAndroidTest
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
