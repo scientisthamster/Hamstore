@@ -11,9 +11,9 @@ on:
 
 # Groups together all the jobs that run in the pre-push workflow.
 jobs:
-  setup-staff:
+  build:
     runs-on: macos-latest
-    steps:
+      steps:
       - name: Checkout Repository
         # This is an action that checks out your repository onto the runner,
         # allowing you to run scripts or other actions against your code (such as build and test tools).
@@ -24,27 +24,38 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-  build:
-    if: ${{ always() }}
-    needs: setup-staff
-    runs-on: macos-latest
-    steps:
       - name: Build with Gradle
         # Build project.
         run: ./gradlew build
   unit-tests:
-    if: ${{ always() }}
-    needs: setup-staff
     runs-on: macos-latest
-    steps:
+      steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
       - name: Unit Tests
         # Run unit tests.
         run: ./gradlew test
   ui-tests:
-    if: ${{ always() }}
-    needs: setup-staff
     runs-on: macos-latest
-    steps:
+      steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
       - name: Instrumented Tests
         # Run instrumented test(UI tests).
         uses: reactivecircus/android-emulator-runner@v2
@@ -52,10 +63,18 @@ jobs:
           api-level: 29
           script: ./gradlew connectedCheck
   lint-check:
-    if: ${{ always() }}
-    needs: setup-staff
     runs-on: macos-latest
-    steps:
+      steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
       - name: Ktlint check
         # Run ktlint check
         run: ./gradlew ktlintCheck
