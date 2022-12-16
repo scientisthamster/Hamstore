@@ -62,6 +62,7 @@ jobs:
         # Build project.
         run: ./gradlew build
   unit-tests:
+    needs: build
     runs-on: macos-latest
     steps:
       - name: Checkout Repository
@@ -78,6 +79,7 @@ jobs:
         # Run unit tests.
         run: ./gradlew test
   ui-tests:
+    needs: unit-tests
     runs-on: macos-latest
     steps:
       - name: Checkout Repository
