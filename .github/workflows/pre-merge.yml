@@ -11,7 +11,6 @@ on:
 
 # Groups together all the jobs that run in the pre-push workflow.
 jobs:
-  if: failure()
   lint-check:
     runs-on: macos-latest
     steps:
@@ -27,6 +26,7 @@ jobs:
           java-version: '11'
       - name: Ktlint check
         # Run ktlint check
+        if: failure()
         run: ./gradlew ktlintCheck
     detekt-check:
       runs-on: macos-latest
