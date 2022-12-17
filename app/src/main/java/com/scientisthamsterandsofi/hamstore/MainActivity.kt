@@ -27,7 +27,6 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    val t450 = 0
 }
 
 @Composable
@@ -41,4 +40,10 @@ fun DefaultPreview() {
     HamstoreTheme {
         Greeting("Android")
     }
+
+
+
+
+
+
 }
