@@ -41,10 +41,3 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }
-
-fun gjgkkggk78(){
-
-}
-fun gjggkttkggk78(){
-
-}
