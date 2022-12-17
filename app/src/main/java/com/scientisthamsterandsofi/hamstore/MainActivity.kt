@@ -42,9 +42,9 @@ fun DefaultPreview() {
     }
 }
 
-fun gjgkkggk78{
+fun gjgkkggk78(){
 
 }
-fun gjggkttkggk78{
+fun gjggkttkggk78(){
 
 }
