@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+    val t450 = 0
 }
 
 @Composable

@@ -1,5 +1,5 @@
 # The name of GitHub Actions.
-name: Pre Push Checks
+name: Pre Merge Checks
 
 # Specifies the trigger for this workflow.
 on:
@@ -11,7 +11,41 @@ on:
 
 # Groups together all the jobs that run in the pre-push workflow.
 jobs:
+  ktlint-check:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+      - name: Ktlint check
+        # Run ktlint check
+        run: ./gradlew ktlintCheck
+  detekt-check:
+    needs: ktlint-check
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        # This is an action that checks out your repository onto the runner,
+        # allowing you to run scripts or other actions against your code (such as build and test tools).
+        uses: actions/checkout@v3
+      - name: Setup Java
+        # Setup Java for our repository.
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+      - name: Detekt check
+        # Run detekt check
+        run: ./gradlew detekt
   build:
+    needs: detekt-check
     runs-on: macos-latest
     steps:
       - name: Checkout Repository
@@ -28,6 +62,7 @@ jobs:
         # Build project.
         run: ./gradlew build
   unit-tests:
+    needs: build
     runs-on: macos-latest
     steps:
       - name: Checkout Repository
@@ -44,6 +79,7 @@ jobs:
         # Run unit tests.
         run: ./gradlew test
   ui-tests:
+    needs: unit-tests
     runs-on: macos-latest
     steps:
       - name: Checkout Repository
@@ -62,19 +98,3 @@ jobs:
         with:
           api-level: 29
           script: ./gradlew connectedCheck
-  lint-check:
-    runs-on: macos-latest
-    steps:
-      - name: Checkout Repository
-        # This is an action that checks out your repository onto the runner,
-        # allowing you to run scripts or other actions against your code (such as build and test tools).
-        uses: actions/checkout@v3
-      - name: Setup Java
-        # Setup Java for our repository.
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'adopt'
-          java-version: '11'
-      - name: Ktlint check
-        # Run ktlint check
-        run: ./gradlew ktlintCheck
