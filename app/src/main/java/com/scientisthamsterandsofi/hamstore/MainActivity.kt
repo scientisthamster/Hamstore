@@ -40,4 +40,10 @@ fun DefaultPreview() {
     HamstoreTheme {
         Greeting("Android")
     }
+
+
+
+
+
+
 }
