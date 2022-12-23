@@ -296,7 +296,6 @@ exceptions:
     active: true
     exceptionNames:
       - 'Error'
-      - 'Exception'
       - 'RuntimeException'
       - 'Throwable'
 
@@ -656,7 +655,7 @@ style:
     acceptableLength: 4
     allowNonStandardGrouping: false
   UnnecessaryAbstractClass:
-    active: true
+    active: false
   UnnecessaryAnnotationUseSiteTarget:
     active: false
   UnnecessaryApply:
