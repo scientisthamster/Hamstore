@@ -10,6 +10,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
     id 'org.jlleitschuh.gradle.ktlint' version '11.0.0'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
 }
 
 subprojects {
