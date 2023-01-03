@@ -1,4 +1,4 @@
-package com.scientisthamsterandsofi.hamstore.ui.theme
+package com.epam.hamstore.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
