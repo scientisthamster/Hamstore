@@ -1,4 +1,4 @@
-package com.scientisthamsterandsofi.hamstore
+package com.epam.hamstore
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.scientisthamsterandsofi.hamstore.ui.theme.HamstoreTheme
+import com.epam.hamstore.ui.theme.HamstoreTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.scientisthamsterandsofi.hamstore'
+    namespace 'com.epam.hamstore'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.scientisthamsterandsofi.hamstore"
+        applicationId "com.epam.hamstore"
         minSdk 24
         targetSdk 32
         versionCode 1

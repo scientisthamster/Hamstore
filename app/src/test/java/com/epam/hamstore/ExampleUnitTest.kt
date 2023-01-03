@@ -1,4 +1,4 @@
-package com.scientisthamsterandsofi.hamstore
+package com.epam.hamstore
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

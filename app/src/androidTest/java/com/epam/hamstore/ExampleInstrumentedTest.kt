@@ -1,4 +1,4 @@
-package com.scientisthamsterandsofi.hamstore
+package com.epam.hamstore
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.scientisthamsterandsofi.hamstore", appContext.packageName)
+        assertEquals("com.epam.hamstore", appContext.packageName)
     }
 }
