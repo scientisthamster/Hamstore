@@ -14,3 +14,12 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Hamstore"
 include ':app'
+include ':core'
+include ':core:datastore'
+include ':core:model'
+include ':core:data'
+include ':core:designsystem'
+include ':feature'
+include ':feature:onboardig'
+include ':feature:home'
+include ':core:common'
