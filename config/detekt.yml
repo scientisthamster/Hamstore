@@ -366,7 +366,7 @@ naming:
   TopLevelPropertyNaming:
     active: true
     constantPattern: '[a-z][A-Z][_A-Z0-9]*'
-    propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
+    propertyPattern: '[a-z][A-Za-z][_A-Za-z0-9]*'
     privatePropertyPattern: '_?[A-Za-z][_A-Za-z0-9]*'
   VariableMaxLength:
     active: false
