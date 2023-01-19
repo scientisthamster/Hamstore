@@ -30,7 +30,7 @@ subprojects {
         android = false
         outputToConsole = true
         ignoreFailures = false
-        disabledRules = ["final-newline"]
+        disabledRules = ["final-newline", "import-ordering"]
         outputColorName = "RED"
 
         reporters {

@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package com.epam.hamstore
 
 import androidx.lifecycle.ViewModel
