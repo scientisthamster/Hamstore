@@ -35,7 +35,6 @@ import com.google.accompanist.pager.rememberPagerState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 internal fun OnboardingRoute(
