@@ -1,7 +1,6 @@
 package com.epam.hamstore.designsystem.icon
 
 import androidx.annotation.DrawableRes
-import androidx.compose.ui.graphics.vector.ImageVector
 import com.epam.hamstore.designsystem.R
 
 object HamstoreIcons {
