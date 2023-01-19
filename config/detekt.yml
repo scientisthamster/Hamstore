@@ -127,10 +127,10 @@ complexity:
     threshold: 600
   LongMethod:
     active: true
-    threshold: 60
+    threshold: 80
   LongParameterList:
     active: true
-    functionThreshold: 6
+    functionThreshold: 10
     constructorThreshold: 7
     ignoreDefaultParameters: false
     ignoreDataClasses: true
@@ -681,7 +681,7 @@ style:
   UnusedPrivateClass:
     active: true
   UnusedPrivateMember:
-    active: true
+    active: false
     allowedNames: '(_|ignored|expected|serialVersionUID)'
   UseAnyOrNoneInsteadOfFind:
     active: true
@@ -718,6 +718,6 @@ style:
     active: true
     ignoreLateinitVar: false
   WildcardImport:
-    active: true
+    active: false
     excludeImports:
       - 'java.util.*'

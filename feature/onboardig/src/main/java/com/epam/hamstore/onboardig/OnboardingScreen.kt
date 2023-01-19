@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package com.epam.hamstore.onboardig
 
 import androidx.compose.animation.Crossfade
@@ -47,7 +48,6 @@ internal fun OnboardingRoute(
         items = onboardingItems,
         pagerState = rememberPagerState(),
         coroutineScope = rememberCoroutineScope(),
-        onSkipClick = navigateToHomeScreen,
         onStartUsingClick = {
             viewModel.shouldHideOnboardingScreen()
             navigateToHomeScreen()
@@ -62,7 +62,6 @@ internal fun OnboardingScreen(
     items: List<OnboardingItem>,
     pagerState: PagerState,
     coroutineScope: CoroutineScope,
-    onSkipClick: () -> Unit,
     onStartUsingClick: () -> Unit,
 ) {
     Column(
@@ -84,7 +83,6 @@ internal fun OnboardingScreen(
                     description = stringResource(id = description),
                     position = page,
                     lastIndex = items.lastIndex,
-                    onSkipClick = onSkipClick
                 )
             }
         }
@@ -124,7 +122,9 @@ internal fun OnboardingScreen(
             elevation = ButtonDefaults.elevation(1.dp, 4.dp)
         ) {
             val buttonText =
-                stringResource(id = if (pagerState.currentPage != items.lastIndex) R.string.button_continue else R.string.start_using_app)
+                stringResource(id =
+                if (pagerState.currentPage != items.lastIndex) R.string.button_continue
+                else R.string.start_using_app)
             Crossfade(
                 targetState = buttonText,
                 modifier = Modifier.fillMaxWidth()
@@ -171,7 +171,6 @@ internal fun OnboardingCarouselItem(
     description: String,
     position: Int,
     lastIndex: Int,
-    onSkipClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -237,7 +236,6 @@ private fun PreviewOnboardingScreen() {
         items = onboardingItems,
         pagerState = rememberPagerState(),
         coroutineScope = rememberCoroutineScope(),
-        onSkipClick = { /*TODO*/ },
         onStartUsingClick = { /*TODO*/ },
     )
 }
@@ -252,7 +250,6 @@ private fun PreviewOnboardingCarouselItem() {
             description = stringResource(id = description),
             position = 2,
             lastIndex = 2,
-            onSkipClick = {}
         )
     }
 }
