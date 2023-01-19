@@ -12,4 +12,10 @@ import javax.inject.Inject
 class OnboardingViewModel @Inject constructor(
     private val userDataRepository: UserDataRepository
 ) : ViewModel() {
+
+    fun shouldHideOnboardingScreen() {
+        viewModelScope.launch {
+            userDataRepository.setShouldHideOnboardingScreen(true)
+        }
+    }
 }

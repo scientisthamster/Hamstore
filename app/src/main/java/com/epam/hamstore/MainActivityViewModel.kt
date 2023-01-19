@@ -7,7 +7,10 @@ import com.epam.hamstore.MainActivityUiState.Success
 import com.epam.hamstore.data.repository.UserDataRepository
 import com.epam.hamstore.model.UserData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,6 +23,14 @@ class MainActivityViewModel @Inject constructor(
         scope = viewModelScope,
         initialValue = Loading,
         started = SharingStarted.WhileSubscribed(5_000)
+    )
+
+    val shouldHideOnboardingScreen: StateFlow<Boolean> = userDataRepository.userData.map {
+        it.shouldHideOnboardingScreen
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.Eagerly,
+        initialValue = false
     )
 }
 

@@ -9,6 +9,7 @@ import com.epam.hamstore.home.HomeRoute
 const val homeScreenRoute = "home_screen_route"
 
 fun NavController.navigateToHomeScreen(navOptions: NavOptions? = null) {
+    popBackStack()
     navigate(route = homeScreenRoute, navOptions = navOptions)
 }
 

@@ -49,7 +49,10 @@ internal fun OnboardingRoute(
         pagerState = rememberPagerState(),
         coroutineScope = rememberCoroutineScope(),
         onSkipClick = navigateToHomeScreen,
-        onStartUsingClick = navigateToHomeScreen,
+        onStartUsingClick = {
+            viewModel.shouldHideOnboardingScreen()
+            navigateToHomeScreen()
+        },
     )
 }
 
@@ -100,16 +103,16 @@ internal fun OnboardingScreen(
 
         Button(
             onClick = {
-                coroutineScope.launch {
-                    if (pagerState.currentPage < items.lastIndex) {
-                        // When Continue button clicked
+                if (pagerState.currentPage < items.lastIndex) {
+                    // When Continue button clicked
+                    coroutineScope.launch {
                         pagerState.animateScrollToPage(
                             page = pagerState.currentPage + 1,
                             pageOffset = 0f
                         )
-                    } else {
-                        onStartUsingClick()
                     }
+                } else {
+                    onStartUsingClick()
                 }
             },
             modifier = Modifier
@@ -193,32 +196,37 @@ internal fun OnboardingCarouselItem(
                 .background(
                     color = Orange100
                 )
-                .weight(1f)
+                .weight(3f)
                 .padding(horizontal = 28.dp),
             alignment = Center
         )
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text(
-            text = title,
-            style = titleMedium,
-            textAlign = TextAlign.Center,
+        Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp),
-        )
+                .weight(1f)
+        ) {
+            Text(
+                text = title,
+                style = titleMedium,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+            )
 
-        Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
-        Text(
-            text = description,
-            style = subtitleSmall,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp),
-        )
+            Text(
+                text = description,
+                style = subtitleSmall,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+            )
+        }
     }
 }
 

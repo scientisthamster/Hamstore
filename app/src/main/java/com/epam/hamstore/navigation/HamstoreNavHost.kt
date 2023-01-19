@@ -7,13 +7,12 @@ import androidx.navigation.compose.NavHost
 import com.epam.hamstore.home.navigation.homeScreen
 import com.epam.hamstore.home.navigation.navigateToHomeScreen
 import com.epam.hamstore.onboardig.navigation.onboardingScreen
-import com.epam.hamstore.onboardig.navigation.onboardingScreenRoute
 
 @Composable
 internal fun HamstoreNavHost(
     navController: NavHostController,
     modifier: Modifier = Modifier,
-    startDestination: String = onboardingScreenRoute
+    startDestination: String,
 ) {
     NavHost(
         navController = navController,
