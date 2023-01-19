@@ -1,3 +1,4 @@
+@file:Suppress("MagicNumber")
 package com.epam.hamstore.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
