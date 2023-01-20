@@ -1,4 +1,5 @@
 @file:Suppress("MagicNumber")
+
 package com.epam.hamstore.onboardig
 
 import androidx.compose.animation.Crossfade
@@ -122,9 +123,10 @@ internal fun OnboardingScreen(
             elevation = ButtonDefaults.elevation(1.dp, 4.dp)
         ) {
             val buttonText =
-                stringResource(id =
-                if (pagerState.currentPage != items.lastIndex) R.string.button_continue
-                else R.string.start_using_app)
+                stringResource(
+                    id = if (pagerState.currentPage != items.lastIndex) R.string.button_continue
+                    else R.string.start_using_app
+                )
             Crossfade(
                 targetState = buttonText,
                 modifier = Modifier.fillMaxWidth()

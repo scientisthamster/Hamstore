@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.epam.hamstore.designsystem.icon.HamstoreIcons
 import com.epam.hamstore.onboardig.R
-import com.epam.hamstore.onboardig.model.OnboardingItem.*
+import com.epam.hamstore.onboardig.model.OnboardingItem.* // ktlint-disable no-unused-imports
 
 sealed class OnboardingItem(
     @DrawableRes val image: Int,
