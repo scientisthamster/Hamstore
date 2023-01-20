@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sell_title">Sell</string>
+    <string name="sell_description">Sell your product with your require money. And easy to post.</string>
+    <string name="get_reward_title">Get Reward</string>
+    <string name="get_reward_description">We giving regularly reward to our lucky clients.</string>
+    <string name="buy_title">Buy</string>
+    <string name="buy_description">Buy any product in your like. Get it easily and high quality product.</string>
+    <string name="start_using_app">Start Using The App</string>
+    <string name="button_continue">Continue</string>
+    <string name="skip">Skip</string>
+</resources>
