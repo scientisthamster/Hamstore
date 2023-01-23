@@ -7,7 +7,7 @@ object HamstoreIcons {
     val Home = R.drawable.ic_home
     val Category = R.drawable.ic_category
     val Basket = R.drawable.ic_basket
-    val Profile = R.drawable.ic_profile
+    val Account = R.drawable.ic_account
     val Onboarding_1 = R.drawable.ic_shopping_first
     val Onboarding_2 = R.drawable.ic_shopping_second
     val Onboarding_3 = R.drawable.ic_shopping_third
