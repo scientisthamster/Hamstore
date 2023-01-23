@@ -3,7 +3,7 @@ name: Pre Merge Checks
 
 # Specifies the trigger for this workflow.
 on:
-  push:
+  #push:
   pull_request:
     branches:
       - develop
