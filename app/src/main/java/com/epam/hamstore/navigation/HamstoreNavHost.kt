@@ -6,7 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import com.epam.hamstore.account.navigation.accountScreen
 import com.epam.hamstore.basket.navigation.basketScreen
-import com.epam.hamstore.category.categoryScreen
+import com.epam.hamstore.category.navigation.categoryScreen
 import com.epam.hamstore.home.navigation.homeScreen
 import com.epam.hamstore.home.navigation.navigateToHomeScreen
 import com.epam.hamstore.onboardig.navigation.onboardingScreen

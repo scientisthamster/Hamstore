@@ -13,8 +13,8 @@ import com.epam.hamstore.account.navigation.accountScreenRoute
 import com.epam.hamstore.account.navigation.navigateToAccount
 import com.epam.hamstore.basket.navigation.basketScreenRoute
 import com.epam.hamstore.basket.navigation.navigateToBasket
-import com.epam.hamstore.category.categoryScreenRoute
-import com.epam.hamstore.category.navigateToCategory
+import com.epam.hamstore.category.navigation.categoryScreenRoute
+import com.epam.hamstore.category.navigation.navigateToCategory
 import com.epam.hamstore.home.navigation.homeScreenRoute
 import com.epam.hamstore.home.navigation.navigateToHomeScreen
 import com.epam.hamstore.navigation.TopLevelDestination
