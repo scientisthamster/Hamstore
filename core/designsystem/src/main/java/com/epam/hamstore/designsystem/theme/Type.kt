@@ -20,7 +20,7 @@ private val UrbanistBold = FontFamily(Font(R.font.urbanist_bold))
 private val UrbanistSemiBold = FontFamily(Font(R.font.urbanist_semibold))
 
 val titleMedium = TextStyle(
-    color = Black90,
+    color = DarkBlue90,
     fontWeight = FontWeight.Bold,
     fontFamily = UrbanistBold,
     fontSize = 48.sp,
