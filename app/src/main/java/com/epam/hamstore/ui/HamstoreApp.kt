@@ -29,7 +29,8 @@ fun HamstoreApp(
     shouldHideOnboardingScreen: Boolean,
     appState: HamstoreAppState = rememberHamstoreAppState()
 ) {
-    Scaffold(modifier = Modifier,
+    Scaffold(
+        modifier = Modifier,
         bottomBar = {
             appState.currentDestination?.route?.let {
                 if (it != onboardingScreenRoute) {
